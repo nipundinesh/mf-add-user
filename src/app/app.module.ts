@@ -3,25 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserComponent } from './user/user.component';
 import { CreateUserComponent } from './create-user/create-user.component';
-import {MatInputModule} from '@angular/material/input';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EmptyRouteComponent } from './empty-route/empty-route.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    EmptyRouteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    FormsModule, ReactiveFormsModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
