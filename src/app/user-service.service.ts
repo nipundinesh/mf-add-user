@@ -1,26 +1,32 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserServiceService {
 
-  users = [{
-    name : "Nipun",
-    gitUrl : 'abc',
-    about : '888888888'
-  },
-  {
-    name : "Jane Doe",
-    gitUrl : 'abc',
-    about:'Some example text some example text. Jane Doe is an architect and engineer'
-  }]
+  users ;
+  private getUsersURL = 'http://localhost:3000/getUsers'; 
+  private addUserURL = 'http://localhost:3000/addUser'; 
 
-  constructor() { }
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  constructor(private http: HttpClient) { }
 
 
   getUsers(){
-    return of(this.users);
+    return this.http.get(this.getUsersURL);
   }
+
+  addUser(user){
+    console.log(user);
+    
+    return this.http.post<any>(this.addUserURL, user, this.httpOptions);
+  }
+
+ 
 }

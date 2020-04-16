@@ -9,29 +9,32 @@
 
                     <div class="form-group">
                         <label for="usr">First Name:</label>
-                        <input type="text" class="form-control" id="usrFirstNAme">
+                        <input type="text" class="form-control" id="usrFirstNAme" [(ngModel)]="firstName">
                       </div>
                       <div class="form-group">
                           <label for="usr">Last Name:</label>
-                          <input type="text" class="form-control" id="usrLastName">
+                          <input type="text" class="form-control" id="usrLastName" [(ngModel)]="lastName">
                         </div>
                       <div class="form-group">
-                        <label for="pwd">Ph:</label>
-                        <input type="number" class="form-control" id="pwd">
+                        <label for="ph">Ph:</label>
+                        <input type="number" class="form-control" id="ph" [(ngModel)]="phoneNumber">
                       </div>
-
+                      <div class="form-group">
+                        <label for="empid">Emp Id:</label>
+                        <input type="number" class="form-control" id="empid" [(ngModel)]="empid">
+                      </div>
                 </div>
                 <div class="vl"></div>
                 <div class="col-sm-5">
                    
                     <div class="form-group">
                         <label for="usr">Git URL:</label>
-                        <input type="text" class="form-control" id="gitURL">
+                        <input type="text" class="form-control" id="gitURL" [(ngModel)]="gitUrl">
                       </div>
   
                           <div class="form-group">
                               <label for="comment">Comment:</label>
-                              <textarea class="form-control" rows="5" id="comment"></textarea>
+                              <textarea class="form-control" rows="5" id="comment" [(ngModel)]="comment"></textarea>
                             </div>
                             <div><button type="button" class="btn btn-light" (click)=add(); style="float: right;" >Add</button> </div>
                             

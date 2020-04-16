@@ -9,12 +9,22 @@ import { UserServiceService } from '../user-service.service';
 export class CreateUserComponent implements OnInit {
   usersList : any [];
 
+  firstName: string;
+  lastName: string;
+  phoneNumber :string;
+  empid : string;
+  gitUrl : string; 
+  comment : string;
+
   constructor(private userService : UserServiceService) { }
 
   ngOnInit(): void {
 
     this.userService.getUsers().subscribe((users) => {
-      this.usersList = users;
+
+      console.log(users);
+      
+      // this.usersList = users;
     });
     
   }
@@ -24,6 +34,18 @@ export class CreateUserComponent implements OnInit {
     
     console.log('Add btn clicked...');
     
+    this.userService.addUser({
+      "firstName" : this.firstName,
+      "lastName" : this.lastName, 
+      "phoneNumber" : this.phoneNumber,
+      "empid" : this.empid,
+      "gitUrl" : this.gitUrl,
+      "about" : this.comment
+ 
+    }).subscribe((msg) => {
+      console.log(msg);
+      
+    });
   }
 
   showProfile(user){

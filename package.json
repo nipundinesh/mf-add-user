@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:single-spa": "ng build --prod --deploy-url http://localhost:4601/",
-    "serve:single-spa": "ng serve --disable-host-check --port 4601 --deploy-url http://localhost:4601/ --live-reload false"
+    "serve:single-spa": "ng serve --disable-host-check --port 4601 --deploy-url http://localhost:4601/ --live-reload false",
+    "browser": "ng serve --configuration=browser --port 4601"
   },
   "private": true,
   "dependencies": {
